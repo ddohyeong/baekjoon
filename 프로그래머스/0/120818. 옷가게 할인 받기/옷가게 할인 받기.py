@@ -5,8 +5,8 @@ def solution(price):
     
     for key, value in data:
         if price >= key:
-            answer = price - (price * value)
-            return int(answer)
+            return int(price - (price * value))
+
             
         
     
