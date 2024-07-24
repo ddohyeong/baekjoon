@@ -10,7 +10,8 @@ def solution(babbling):
         for i in data:
             s = s.replace(i, ' ')
 
-        s = s.replace(' ', '')    
+        # s = s.replace(' ', '')    
+        s = s.strip()
         
         if s != '':
             print(tmp)
