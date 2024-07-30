@@ -1,20 +1,12 @@
-import sys
-input = sys.stdin.readline
+money = int(input())
 
-N = 1000 - int(input())
+change_money = [500, 100,50,10,5,1]
 
+change =1000 - money
 
-def count_coin(N):
+ch = 0
+for i in change_money:
+	ch += change // i 
+	change = change % i
 
-    coin_list = [500,100,50,10,5,1]
-
-    count = 0
-    for coin in coin_list:
-        count  += N//coin
-        N %= coin
-
-    return count
-
-
-print(count_coin(N))
-
+print(ch)
