@@ -1,12 +1,16 @@
-money = int(input())
+lst = [500, 100, 50, 10, 5, 1]
+money = 1000 -  int(input())
 
-change_money = [500, 100,50,10,5,1]
+sum = 0 
+for i in lst:
+	if money < i :
+		continue
 
-change =1000 - money
+	sum += money // i
+	money = money % i
 
-ch = 0
-for i in change_money:
-	ch += change // i 
-	change = change % i
+print(sum)
 
-print(ch)
+
+
+
