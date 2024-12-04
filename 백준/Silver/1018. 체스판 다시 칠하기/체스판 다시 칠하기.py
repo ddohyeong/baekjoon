@@ -18,16 +18,16 @@ for i in range(N-8+1):
 		for x in range(i,i+8):
 			for y in range(j,j+8):
 				if te1[x][y] != t1[x-i][y-j]:
-					if te1[x][y] == 'B':
-						te1[x][y] = 'W'
-					else:
-						te1[x][y] = 'B'
+					# if te1[x][y] == 'B':
+					# 	te1[x][y] = 'W'
+					# else:
+					# 	te1[x][y] = 'B'
 					cnt1 += 1
 				if te2[x][y] != t2[x-i][y-j]:
-					if te2[x][y] == 'B':
-						te2[x][y] = 'W'
-					else:
-						te2[x][y] = 'B'
+					# if te2[x][y] == 'B':
+					# 	te2[x][y] = 'W'
+					# else:
+					# 	te2[x][y] = 'B'
 					cnt2 += 1
 	
 		check.append(min(cnt1, cnt2))
