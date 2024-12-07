@@ -1,23 +1,10 @@
-N = int(input())	
+N = int(input())
+arr = [0] + list(map(int, input().split()))
 
-data = [0] + list(map(int, input().split()))
+# solve
+dp = [0 for _ in range(N + 1)]
 
-dp = [-100000000000 for i in range(N+1)]
+for n in range(1, N + 1):
+    dp[n] = max(dp[n - 1], 0) + arr[n]
 
-dp[1] = data[1]
-
-
-prefix_sum = [0] * (N + 1)
-for i in range(1, N + 1):
-    prefix_sum[i] = prefix_sum[i - 1] + data[i - 1]
-
-m = 1
-for n in range(2, N+1):
-	dp[n] = max(dp[n-1], prefix_sum[n] - prefix_sum[m] + data[n], data[n])
-
-	if prefix_sum[n] - prefix_sum[m] + data[n] < data[n]:
-		m = n
-
-
-print(max(dp))
-
+print(max(dp[1:]))
